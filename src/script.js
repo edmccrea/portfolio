@@ -27,7 +27,7 @@ particles.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
 // Materials
 
 const material = new THREE.PointsMaterial({
-  size: 0.005,
+  size: 0.008,
   map: cross,
   transparent: true,
 });
@@ -97,6 +97,19 @@ renderer.setClearColor(new THREE.Color('#192841'), 1);
 
 //Mouse
 
+let timer;
+let mouseMoving = false;
+
+function mouseStopped() {
+  mouseMoving = false;
+}
+
+window.addEventListener('mousemove', function () {
+  mouseMoving = true;
+  clearTimeout(timer);
+  timer = setTimeout(mouseStopped, 1);
+});
+
 const starfield = document.querySelector('.starfield');
 const landing = document.querySelectorAll('.starfield-control');
 landing.forEach((item) => item.addEventListener('mousemove', animateParticles));
@@ -104,11 +117,9 @@ landing.forEach((item) => item.addEventListener('mousemove', animateParticles));
 let isOnDiv = false;
 starfield.addEventListener('mouseenter', function () {
   isOnDiv = true;
-  console.log(isOnDiv);
 });
 starfield.addEventListener('mouseout', function () {
   isOnDiv = false;
-  console.log(isOnDiv);
 });
 
 let mouseX = 0;
@@ -123,20 +134,14 @@ function animateParticles(event) {
  * Animate
  */
 
-const clock = new THREE.Clock();
-
 const tick = () => {
-  const elapsedTime = clock.getElapsedTime();
-
   // Update objects
-  if (!isOnDiv) {
+  if (!isOnDiv || !mouseMoving) {
     particlesMesh.rotation.y += -0.1 * 0.04;
   }
-  if (isOnDiv) {
+  if (isOnDiv && mouseMoving) {
     particlesMesh.rotation.x = -mouseY * 0.0008;
     particlesMesh.rotation.y = -mouseX * 0.0008;
-    // particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
-    // particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
   }
 
   // Render

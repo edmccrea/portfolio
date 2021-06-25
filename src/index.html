@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/312f705777.js"
+      crossorigin="anonymous"
+    ></script>
     <title>edmccrea</title>
   </head>
   <body>
     <nav>
       <a href="" class="logo">Logo</a>
       <ul class="navbar-nav">
-        <li><a href="">About</a></li>
-        <li><a href="">Work</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Theme</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#work">Work</a></li>
+        <li class="nav-item"><a href="">Contact</a></li>
+        <li class="nav-item"><a href="">Theme</a></li>
       </ul>
     </nav>
     <div class="container starfield starfield-control">
@@ -20,9 +24,73 @@
         <h1 class="landing-title">Ed McCrea</h1>
         <p class="landing-subtitle">Front End Web Developer</p>
       </div>
+      <a href="#about" class="scroll"
+        ><i class="fas fa-angle-double-down"></i
+      ></a>
     </div>
     <canvas class="webgl"></canvas>
-    <section class="about"></section>
+
+    <div class="main-content-wrapper">
+      <div class="columns">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+
+      <!-- Selected Work -->
+      <section class="selected-work" id="work">
+
+        <h2>Portfolio</h2>
+
+        <div class="portfolio">
+        <div class="work soniska">
+          <div class="work-bg">
+            <img class="project-img" src="../static/soniska.JPG" alt="" />
+          </div>
+          <h3>Soniska</h2>
+        </div>
+
+        <div class="work soniska">
+          <div class="work-bg">
+            <img class="project-img" src="../static/soniska.JPG" alt="" />
+          </div>
+          <h3>Soniska</h2>
+        </div>
+
+        <div class="work soniska">
+          <div class="work-bg">
+            <img class="project-img" src="../static/soniska.JPG" alt="" />
+          </div>
+          <h3>Soniska</h2>
+        </div>
+
+        <div class="work soniska">
+          <div class="work-bg">
+            <img class="project-img" src="../static/soniska.JPG" alt="" />
+          </div>
+          <h3>Soniska</h2>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about" id="about">
+        <div class="profile-img-container">
+          <img src="../static/profile.jpeg" alt="" class="profile-img" />
+        </div>
+        <div class="info-container">
+          <p class="info-lead">
+            I'm Ed, a self taught Front End Web Developer living in southern
+            Sweden. I love bringing creations to life on all screen sizes.
+          </p>
+          <p class="info-main">
+            Over the past months I have dedicated my life to learning the
+            fundamentals of HTML, CSS, Javascript, React, Node and Mongo DB.
+          </p>
+        </div>
+    </div>
+      </section>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script

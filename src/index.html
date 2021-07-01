@@ -11,12 +11,11 @@
   </head>
   <body>
     <nav>
-      <a href="" class="logo">Logo</a>
+      <a href="" class="logo">Eduardo</a>
       <ul class="navbar-nav">
         <li class="nav-item"><a href="#about">About</a></li>
         <li class="nav-item"><a href="#work">Work</a></li>
-        <li class="nav-item"><a href="">Contact</a></li>
-        <li class="nav-item"><a href="">Theme</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="container starfield starfield-control">
@@ -24,9 +23,16 @@
         <h1 class="landing-title">Ed McCrea</h1>
         <p class="landing-subtitle">Front End Web Developer</p>
       </div>
-      <a href="#about" class="scroll"
-        ><i class="fas fa-angle-double-down"></i
-      ></a>
+
+      <svg class="scroll" width="40" height="77" viewBox="0 0 40 77">
+        <g id="scroll" transform="translate(-253 -787)">
+          <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(253 787)" fill="none" stroke="#fff" stroke-width="2">
+            <rect width="40" height="77" rx="20" stroke="none"/>
+            <rect x="2" y="2" width="36" height="73" rx="18" fill="none"/>
+          </g>
+          <circle class="circle" id="Ellipse_1" data-name="Ellipse 1" cx="11" cy="11" r="11" transform="translate(262 798)" fill="#fff"/>
+        </g>
+      </svg>
     </div>
     <canvas class="webgl"></canvas>
 
@@ -44,28 +50,43 @@
         <h2>Portfolio</h2>
 
         <div class="portfolio">
-        <div class="work soniska">
+
+        <div class="work playground transition" data-content="MERN Stack project to find local sports pitches and courts">
+          <div class="work-bg">
+            <img class="project-img" src="../static/playground.JPG" alt="" />
+          </div>
+          <h3>Playground</h2>
+        </div>
+
+        <div class="work soniska transition" data-content="MERN project for audio mastering business">
           <div class="work-bg">
             <img class="project-img" src="../static/soniska.JPG" alt="" />
           </div>
           <h3>Soniska</h2>
         </div>
 
-        <div class="work soniska">
+        <div class="work moments transition" data-content="React to do style app with working database">
+          <div class="work-bg">
+            <img class="project-img" src="../static/moments.JPG" alt="" />
+          </div>
+          <h3>Moments</h2>
+        </div>
+
+        <div class="work soniska transition" data-content="Portfolio fort Somerset based woodturner (and also my Dad!)">
           <div class="work-bg">
             <img class="project-img" src="../static/soniska.JPG" alt="" />
           </div>
-          <h3>Soniska</h2>
+          <h3>Miguel Mac</h2>
         </div>
 
-        <div class="work soniska">
+        <div class="work soniska transition" >
           <div class="work-bg">
             <img class="project-img" src="../static/soniska.JPG" alt="" />
           </div>
-          <h3>Soniska</h2>
+          <h3>Frans</h2>
         </div>
 
-        <div class="work soniska">
+        <div class="work soniska transition">
           <div class="work-bg">
             <img class="project-img" src="../static/soniska.JPG" alt="" />
           </div>
@@ -75,10 +96,10 @@
 
       <!-- About -->
       <section class="about" id="about">
-        <div class="profile-img-container">
+        <div class="profile-img-container transition">
           <img src="../static/profile.jpeg" alt="" class="profile-img" />
         </div>
-        <div class="info-container">
+        <div class="info-container transition">
           <p class="info-lead">
             I'm Ed, a self taught Front End Web Developer living in southern
             Sweden. I love bringing creations to life on all screen sizes.
@@ -92,7 +113,33 @@
       </section>
     </div>
 
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2 class="transition">Get in Touch</h2>
+            <p class="transition">Am I the one you've been looking for? Contact me through any of these platforms.</p>
+        </div>
+        <div class="socials transition">
+            <a href="" class="email social-link">
+                <i class="fas fa-envelope"></i>
+            <a href=""></a>
+            <a href="https://www.linkedin.com/in/ed-mccrea-2a5248159/" target="_blank" class="linkedin social-link">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/edmccrea" target="_blank" class="github social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/edmccrea" target="_blank" class="twitter social-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &#169 Ed McCrea 2021</p>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js" integrity="sha512-jNJOCd1PIjJoUa1XTDKaPdBLNUe4OJTrltKG+70O5ghYZ943nTRGIzjObwC2JtSm1fG7T06GbUApR2eirIU/jA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/CSSRulePlugin.min.js"
       integrity="sha512-EIzKYNrmzSj8Q5czLrNi/F6bplhopAp2Li9nk/8r7MW+Ov9KPEo0xrjWMYXU8lFYy5dzh/w8Ql5ShZHucrjXdg=="
@@ -100,36 +147,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script>
-      const border = CSSRulePlugin.getRule('.content:before');
-      const landingTitle = document.querySelector('.landing-title');
-      const landingSubtitle = document.querySelector('.landing-subtitle');
-      const timeline = gsap.timeline();
-
-      timeline.from(border, {
-        delay: 0.5,
-        duration: 4,
-        cssRule: { scaleX: 0 },
-      });
-
-      timeline.to(
-        landingTitle,
-        {
-          duration: 2,
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-          y: '30px',
-        },
-        '-=1'
-      );
-      timeline.to(
-        landingSubtitle,
-        {
-          duration: 1,
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-          y: '30px',
-        },
-        '-=0.5'
-      );
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

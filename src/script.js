@@ -107,7 +107,7 @@ function mouseStopped() {
 window.addEventListener('mousemove', function () {
   mouseMoving = true;
   clearTimeout(timer);
-  timer = setTimeout(mouseStopped, 1);
+  timer = setTimeout(mouseStopped, 100);
 });
 
 const starfield = document.querySelector('.starfield');

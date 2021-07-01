@@ -23,13 +23,14 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: 'Raleway';
-  color: var(--primary-dark);
+  color: var(--primary-light);
   background-color: var(--light-color);
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 .columns {
@@ -141,6 +142,17 @@ nav {
 }
 
 .scroll {
+  width: 20px;
+  position: absolute;
+  top: 87.5%;
+  pointer-events: none;
+}
+
+.circle {
+  animation: circleAnim 1.5s alternate-reverse infinite;
+}
+
+.arrow {
   color: white;
   font-size: 2rem;
   z-index: 3;
@@ -149,7 +161,7 @@ nav {
   transition: all ease-in-out 100ms;
 }
 
-.scroll:hover {
+.arrow:hover {
   cursor: pointer;
   font-size: 2.2rem;
   color: var(--light-grey);
@@ -173,17 +185,21 @@ nav {
 
 h2 {
   background-color: var(--light-color);
+  font-size: 2rem;
   padding: 1rem;
+  margin: 1rem;
+  z-index: 3;
 }
 
 .portfolio {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .work {
+  position: relative;
   margin: 2rem 1rem;
   width: 30%;
   height: 35vh;
@@ -193,18 +209,12 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .work-bg {
   width: 100%;
   height: 80%;
-  background-image: linear-gradient(
-    45deg,
-    rgb(233, 175, 89),
-    rgb(252, 152, 51)
-  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,9 +222,74 @@ h2 {
   border-top-left-radius: 2rem;
 }
 
+.soniska .work-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(233, 175, 89, 0.701),
+    rgba(252, 151, 51, 0.701)
+  );
+}
+
+.moments .work-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(42, 68, 114, 0.701),
+    rgba(36, 57, 92, 0.701)
+  );
+}
+
+.playground .work-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(76, 146, 222, 0.701),
+    rgba(145, 137, 129, 0.708)
+  );
+}
+
 .project-img {
+  max-height: 95%;
   height: auto;
   width: 80%;
+}
+
+.work h3 {
+  margin-top: 1rem;
+}
+
+.work:after,
+.work:before {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.work:after {
+  content: '\A';
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+.work:before {
+  content: attr(data-content);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  color: var(--primary-color);
+  z-index: 1;
+  text-align: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.work:hover:after,
+.work:hover:before {
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* About */
@@ -236,7 +311,7 @@ h2 {
 .profile-img-container {
   display: flex;
   justify-content: flex-end;
-  flex: 1;
+  width: 50vw;
 }
 
 .profile-img {
@@ -248,7 +323,9 @@ h2 {
 }
 
 .info-container {
-  flex: 1;
+  width: 50vw;
+  padding: 1rem 0;
+  background-color: var(--light-color);
 }
 
 .info-lead,
@@ -264,4 +341,149 @@ h2 {
 
 .info-main {
   font-size: 1.2rem;
+}
+
+/* Contact */
+
+.contact {
+  background-color: var(--light-color);
+}
+
+.contact-info {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+}
+
+.socials {
+  display: flex;
+  position: relative;
+}
+
+.social-link {
+  width: 25%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
+}
+
+.email:hover,
+.linkedin:hover,
+.github:hover,
+.twitter:hover {
+  color: white;
+}
+
+.email:hover {
+  box-shadow: inset 25vw 0 0 0.09px var(--primary-light);
+}
+
+.linkedin {
+  color: #0e76a8;
+}
+
+.linkedin:hover {
+  box-shadow: inset 25vw 0 0 0 #0e76a8;
+}
+
+.github {
+  color: #333;
+}
+
+.github:hover {
+  box-shadow: inset 25vw 0 0 0 #333;
+}
+
+.twitter {
+  color: #1da1f2;
+  transition: all ease 0.8s;
+}
+
+.twitter:hover {
+  box-shadow: inset 25vw 0 0 0 #1da1f2;
+}
+
+/* Footer */
+
+footer {
+  color: white;
+  font-weight: 200;
+  height: 15vh;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation */
+
+@keyframes circleAnim {
+  from {
+    transform: translate(262px, 798px);
+    z-index: 5;
+  }
+  to {
+    transform: translate(262px, 830px);
+    z-index: 5;
+  }
+}
+
+/* Responsiveness */
+
+@media (max-width: 1023px) {
+  .logo {
+    width: 40vw;
+  }
+
+  .navbar-nav {
+    width: 60vw;
+  }
+
+  .work {
+    width: 42.5%;
+  }
+
+  .about {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .profile-img {
+    max-height: 45vh;
+    margin-left: 2rem;
+  }
+
+  .info-lead,
+  .info-main {
+    width: 80%;
+  }
+
+  .info-lead {
+    font-size: 1.2rem;
+  }
+
+  .info-main {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio {
+    flex-direction: column;
+  }
+
+  .work {
+    width: 90%;
+  }
 }

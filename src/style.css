@@ -204,7 +204,7 @@ h2 {
   width: 30%;
   height: 35vh;
   background-color: var(--light-color);
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -218,8 +218,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top-right-radius: 2rem;
-  border-top-left-radius: 2rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .soniska .work-bg {
@@ -242,7 +242,7 @@ h2 {
   background-image: linear-gradient(
     45deg,
     rgba(76, 146, 222, 0.701),
-    rgba(145, 137, 129, 0.708)
+    rgba(158, 203, 222, 0.708)
   );
 }
 
@@ -267,7 +267,7 @@ h2 {
   content: '\A';
   width: 100%;
   height: 100%;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   top: 0;
   left: 0;
   background: rgba(255, 255, 255, 0.9);
@@ -351,7 +351,7 @@ h2 {
 
 .contact-info {
   text-align: center;
-  margin: 2rem 0 1rem;
+  margin: 2rem 2rem 1rem;
 }
 
 .contact-info h2 {
@@ -424,6 +424,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 /* Animation */
@@ -479,11 +480,42 @@ footer {
 }
 
 @media (max-width: 767px) {
+  .logo {
+    width: 20vw;
+  }
+
+  .navbar-nav {
+    width: 80vw;
+  }
   .portfolio {
     flex-direction: column;
   }
 
   .work {
     width: 90%;
+  }
+
+  .about {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .profile-img-container {
+    justify-content: center;
+  }
+
+  .profile-img {
+    margin: 0;
+  }
+
+  .info-container {
+    justify-content: center;
+    width: 51vw;
+  }
+
+  .info-lead,
+  .info-main {
+    padding: 0;
+    margin-bottom: 2rem;
   }
 }

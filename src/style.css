@@ -246,6 +246,14 @@ h2 {
   );
 }
 
+.pokedex .work-bg {
+  background-image: linear-gradient(
+    45deg,
+    rgba(240, 247, 255, 0.701),
+    rgba(158, 203, 222, 0.708)
+  );
+}
+
 .project-img {
   max-height: 95%;
   height: auto;

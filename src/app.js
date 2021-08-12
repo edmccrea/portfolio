@@ -1,16 +1,16 @@
+import gsap from 'gsap';
 import { CSSPlugin, AttrPlugin } from 'gsap/all';
 
 //without this line, CSSPlugin and AttrPlugin may get dropped by your bundler...
 const plugins = [CSSPlugin, AttrPlugin];
 
 // Landing Animation
-
+gsap.registerPlugin(CSSRulePlugin);
 const border = CSSRulePlugin.getRule('.content:before');
 const landingTitle = document.querySelector('.landing-title');
 const landingSubtitle = document.querySelector('.landing-subtitle');
 const scrollMouse = document.querySelector('.scroll');
 const timeline = gsap.timeline();
-gsap.registerPlugin(CSSRulePlugin);
 
 timeline.from(border, {
   delay: 0.5,

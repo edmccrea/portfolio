@@ -5,6 +5,7 @@ const landingTitle = document.querySelector('.landing-title');
 const landingSubtitle = document.querySelector('.landing-subtitle');
 const scrollMouse = document.querySelector('.scroll');
 const timeline = gsap.timeline();
+gsap.registerPlugin(CSSRule);
 
 timeline.from(border, {
   delay: 0.5,
@@ -54,25 +55,3 @@ transition.forEach((section) => {
     stagger: 0.3,
   });
 });
-
-// gsap.from('.transition2', {
-//   scrollTrigger: {
-//     trigger: '.transition2',
-//     start: 'center bottom',
-//   },
-//   y: 50,
-//   opacity: 0,
-//   duration: 1.3,
-//   stagger: 0.3,
-// });
-
-// gsap.from('.transition3', {
-//   scrollTrigger: {
-//     trigger: '.transition3',
-//     start: 'center bottom',
-//   },
-//   y: 50,
-//   opacity: 0,
-//   duration: 1.3,
-//   stagger: 0.3,
-// });

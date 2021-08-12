@@ -1,4 +1,5 @@
-import gsap from 'gsap';
+import { gsap } from 'gsap';
+import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import { CSSPlugin, AttrPlugin } from 'gsap/all';
 
 //without this line, CSSPlugin and AttrPlugin may get dropped by your bundler...

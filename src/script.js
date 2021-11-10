@@ -153,6 +153,8 @@ const tick = () => {
 
 tick();
 
+//Page Animation
+
 import { gsap } from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
 import { CSSPlugin, AttrPlugin } from 'gsap/all';

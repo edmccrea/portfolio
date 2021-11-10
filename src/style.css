@@ -8,6 +8,7 @@
   --off-white: #f5f5f5;
   --light-grey: #cfcfcf;
   --lightest-grey: #e1e1e1;
+  --grey: #a1a1a1;
 }
 
 * {
@@ -192,112 +193,85 @@ h2 {
 }
 
 .portfolio {
-  width: 80%;
+  width: 70%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
 .work {
   position: relative;
-  margin: 2rem 1rem;
-  width: 30%;
-  height: 35vh;
+  margin: 1rem 0;
+  width: 100%;
+  height: 50vh;
   background-color: var(--light-color);
-  border-radius: 0.5rem;
   z-index: 2;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.work-bg {
-  width: 100%;
-  height: 80%;
+.work-img {
+  width: 60%;
+}
+
+.work-img-mid {
+  text-align: right;
+}
+
+.work-description {
+  width: 40%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
+  flex-direction: column;
 }
 
-.soniska .work-bg {
-  background-image: linear-gradient(
-    45deg,
-    rgba(233, 175, 89, 0.701),
-    rgba(252, 151, 51, 0.701)
-  );
+.work-header,
+.work-info,
+.work-tools {
+  margin-bottom: 1rem;
 }
 
-.moments .work-bg {
-  background-image: linear-gradient(
-    45deg,
-    rgba(42, 68, 114, 0.701),
-    rgba(36, 57, 92, 0.701)
-  );
+.work-links {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.playground .work-bg {
-  background-image: linear-gradient(
-    45deg,
-    rgba(76, 146, 222, 0.701),
-    rgba(158, 203, 222, 0.708)
-  );
+.work-tools {
+  line-height: 2rem;
 }
 
-.pokedex .work-bg {
-  background-image: linear-gradient(
-    45deg,
-    rgba(240, 247, 255, 0.701),
-    rgba(158, 203, 222, 0.708)
-  );
+.tool {
+  background-color: var(--primary-color);
+  color: var(--off-white);
+  padding: 3px 5px;
+  margin: 0.5rem 0;
+  border-radius: 0.2rem;
+  line-height: 1.4rem;
+}
+
+.tool:hover {
+  cursor: default;
+}
+
+.work-link {
+  font-size: 1.6rem;
+  transition: all ease 0.3s;
+}
+
+.work-link:hover {
+  color: var(--grey);
 }
 
 .project-img {
-  max-height: 95%;
+  max-width: 95%;
   height: auto;
-  width: 80%;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .work h3 {
   margin-top: 1rem;
-}
-
-.work:after,
-.work:before {
-  position: absolute;
-  opacity: 0;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-}
-.work:after {
-  content: '\A';
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  top: 0;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
-}
-.work:before {
-  content: attr(data-content);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10%;
-  color: var(--primary-color);
-  z-index: 1;
-  text-align: center;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-.work:hover:after,
-.work:hover:before {
-  opacity: 1;
-  cursor: pointer;
 }
 
 /* About */
@@ -373,17 +347,20 @@ h2 {
 .socials {
   display: flex;
   position: relative;
+  width: 70%;
+  margin: 2rem auto;
 }
 
 .social-link {
   width: 25%;
-  height: 30vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
+  font-size: 2.5rem;
   -webkit-transition: all ease 0.8s;
-  transition: all ease 0.8s;
+  transition: all ease 0.3s;
+  color: var(--primary-color);
 }
 
 .email:hover,
@@ -394,32 +371,22 @@ h2 {
 }
 
 .email:hover {
-  box-shadow: inset 25vw 0 0 0.09px var(--primary-light);
-}
-
-.linkedin {
-  color: #0e76a8;
+  color: var(--primary-light);
 }
 
 .linkedin:hover {
-  box-shadow: inset 25vw 0 0 0 #0e76a8;
+  color: #0e76a8;
 }
-
-.github {
+.github:hover {
   color: #333;
 }
 
-.github:hover {
-  box-shadow: inset 25vw 0 0 0 #333;
-}
-
 .twitter {
-  color: #1da1f2;
   transition: all ease 0.8s;
 }
 
 .twitter:hover {
-  box-shadow: inset 25vw 0 0 0 #1da1f2;
+  color: #1da1f2;
 }
 
 /* Footer */
@@ -459,9 +426,9 @@ footer {
     width: 60vw;
   }
 
-  .work {
+  /* .work {
     width: 42.5%;
-  }
+  } */
 
   .about {
     width: 80%;

@@ -155,11 +155,10 @@ tick();
 
 //Page Animation
 
-import { gsap } from 'gsap';
+import { gsap, CSSPlugin } from 'gsap';
 import CSSRulePlugin from 'gsap/CSSRulePlugin';
-import { CSSPlugin, AttrPlugin } from 'gsap/all';
 
-const plugins = [CSSPlugin, AttrPlugin];
+const plugins = [CSSPlugin];
 
 // Landing Animation
 gsap.registerPlugin(CSSRulePlugin);

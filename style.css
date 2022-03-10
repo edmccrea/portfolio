@@ -376,15 +376,13 @@ h2 {
   color: white;
 }
 
-.email:hover {
-  color: var(--primary-light);
+.email:hover,
+.github:hover {
+  color: var(--grey);
 }
 
 .linkedin:hover {
   color: #0e76a8;
-}
-.github:hover {
-  color: #333;
 }
 
 .twitter {

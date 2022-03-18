@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./static/logo_icon.PNG" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,11 +12,11 @@
       src="https://kit.fontawesome.com/312f705777.js"
       crossorigin="anonymous"
     ></script>
-    <title>Ed McCrea</title>
+    <title>Ed McCrea | Web Developer</title>
   </head>
   <body>
     <nav>
-      <a href="" class="logo">edmccrea</a>
+      <a href='#' class="logo"><img src="./static/logo_small.PNG" alt=""></a>
       <ul class="navbar-nav">
         <li class="nav-item"><a href="#work">Work</a></li>
         <li class="nav-item"><a href="#about">About</a></li>
@@ -58,26 +59,26 @@
           <div class="work transition">
             <div class="work-description">
               <h3 class="work-header">Coin Track</h3>
-              <p class="work-info">A real time cryptocurrency tracking page.</p>
+              <p class="work-info">A real time cryptocurrency tracking page displaying the price and changes of all known cryptocurrencies utilising the CoinGecko API.</p>
               <p class="work-tools"><span class="tool">React</span> <span class="tool">Material UI</span></p>
               <div class="work-links">
                 <a href="https://thecointrack.netlify.app" target="_blank" class="work-link"><i class="fas fa-external-link-alt"></i></a>
                 <a href="https://github.com/edmccrea/coin-track" target="_blank" class="work-link"><i class="fab fa-github"></i></a>
               </div>
             </div>
-            <div class="work-img">
-              <img class="project-img" src="./static/cointrack.JPG" alt="">
+            <div class="work-img work-img-mid">
+              <a href="https://thecointrack.netlify.app" target="_blank"><img class="project-img" src="./static/cointrack.JPG" alt=""></a>
             </div>
           </div>
 
           <div class="work transition">
             <div class="work-img">
-              <img class="project-img" src="./static/gtl.JPG" alt="">
+              <a href="https://guess-the-lines.herokuapp.com/" target="_blank"><img class="project-img" src="./static/gtl.JPG" alt=""></a>
             </div>
             <div class="work-description">
               <h3 class="work-header">Guess the Lines</h3>
-              <p class="work-info">A full stack application where players guess the betting lines of upcoming NFL games against popular podcast hosts Bill Simmons and Cousin Sal.</p>
-              <p class="work-tools"><span class="tool">React</span> <span class="tool">Node.js</span> <span class="tool">Express</span> <span class="tool">Mongoose</span> <span class="tool">SASS</span></p>
+              <p class="work-info">A full stack application where players create an account to guess the predicted point difference of upcoming NFL games against popular podcast hosts Bill Simmons and Cousin Sal.</p>
+              <p class="work-tools"><span class="tool">React</span> <span class="tool">Redux</span> <span class="tool">Node.js</span> <span class="tool">Express</span> <span class="tool">Mongoose</span> <span class="tool">SASS</span></p>
               <div class="work-links">
                 <a href="https://guess-the-lines.herokuapp.com/" target="_blank" class="work-link"><i class="fas fa-external-link-alt"></i></a>
                 <a href="https://github.com/edmccrea/guess_the_lines" target="_blank" class="work-link"><i class="fab fa-github"></i></a>
@@ -96,7 +97,7 @@
               </div>
             </div>
             <div class="work-img work-img-mid">
-              <img class="project-img " src="./static/pokedex.JPG" alt="">
+              <a href="https://pokeapi-pokedex.netlify.app" target="_blank"><img class="project-img " src="./static/pokedex.JPG" alt=""></a>
             </div>
           </div>
 
@@ -115,9 +116,10 @@
             Sweden. I love bringing creations to life on all screen sizes.
           </p>
           <p class="info-main">
-            Over the past months I have dedicated my life to learning the
-            fundamentals of HTML, CSS, Javascript, React, Node and Mongo DB.
+            I love to creatively solve problems and feel lucky to have found Web Development. I have been learning the fundamentals of HTML, CSS, Javascript, React, MongoDB and Node over the past year. I am eager to grow in this industry and am always excited to learn while taking on new challenges.
           </p>
+
+          <a href="ed_mccrea_cv.pdf" class="resume-link" download>Download CV</a>
         </div>
     </div>
       </section>
@@ -145,7 +147,8 @@
     </section>
 
     <footer class="transition">
-        <p>Copyright &#169 Ed McCrea 2022</p>
+      <img src="./static/ed_logo.PNG" alt="" class="footer-logo">
+        <p class="footer-text">Copyright &#169 2022</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>

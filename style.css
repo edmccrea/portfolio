@@ -544,4 +544,8 @@ footer {
     margin-bottom: 2rem;
     width: 100%;
   }
+
+  .resume-link {
+    margin: 0 0 2rem 0;
+  }
 }
